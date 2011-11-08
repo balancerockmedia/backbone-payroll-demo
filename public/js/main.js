@@ -1,7 +1,9 @@
 // set up initial object structure
 var BackbonePayroll = {
 	Model: {}, 
-	View: {}
+	View: {
+		Common: {}
+	}
 };
 
 // load modules
