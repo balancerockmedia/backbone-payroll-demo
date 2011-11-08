@@ -65,7 +65,7 @@ define(function() {
 
 Create an instance of the DialogBoxView and pass it the content for the message and the callback functions for each button
 $('.open_dialog_box').click(function() {
-	var dialogBoxView = new Aetna.SchoolWellness.UI.Views.Common.DialogBoxView({
+	var dialogBoxView = new BackbonePayroll.View.Common.DialogBoxView({
 		content: "Are you sure you want to do that?",
 		
 		onCancel: function() {
