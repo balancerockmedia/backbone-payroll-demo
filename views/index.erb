@@ -15,132 +15,132 @@
 <script data-main="js/main" src="js/lib/require.js"></script>
 </head>
 <body>
-	
+    
 <div class="topbar">
-	<div class="fill">
+    <div class="fill">
         <div class="container">
-          	<a class="brand" href="#">Backbone Payroll Demo</a>
-		</div>
-	</div>
+            <a class="brand" href="#">Backbone Payroll Demo</a>
+        </div>
+    </div>
 </div>
-	
+    
 <div class="container">
-	<div class="content">
-		<div class="page-header">
-			<h1>Manage Employees</h1>
-		</div>
-		        
-		<div class="row">
-			<div class="span14" id="employees_table_container"></div>
-		</div>
-	</div>
+    <div class="content">
+        <div class="page-header">
+            <h1>Manage Employees</h1>
+        </div>
+                
+        <div class="row">
+            <div class="span14" id="employees_table_container"></div>
+        </div>
+    </div>
 </div>
 
 <div id="modal_container"></div>
 
 <script type="text/template" id="employee_table_template">
-	<table class="employees zebra-striped">
-		<thead> 
-			<tr>
-				<th class="header">First Name</th>
-				<th class="header">Last Name</th>
-				<th class="header">Position</th>
-				<th class="header">Annual Salary</th>
-				<th class="header">Sales This Period</th>
-				<th width="95"></th>
-			</tr>
-		</thead>
-		<tbody>
-			
-		</tbody>
-	</table>
-	
-	<p><a class="btn primary add" href="#">Add Employee</a></p>
+    <table class="employees zebra-striped">
+        <thead> 
+            <tr>
+                <th class="header">First Name</th>
+                <th class="header">Last Name</th>
+                <th class="header">Position</th>
+                <th class="header">Annual Salary</th>
+                <th class="header">Sales This Period</th>
+                <th width="95"></th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    
+    <p><a class="btn primary add" href="#">Add Employee</a></p>
 </script>
 
 <script type="text/template" id="employee_table_row_template">
-	<td>{{ first_name }}</td>
-	<td>{{ last_name }}</td>
-	<td>{{ position }}</td>
-	<td>${{ annual_salary }}</td>
-	<td>${{ sales_this_period }}</td>
-	<td><a class="btn small edit" href="#">Edit</a> <a class="btn small delete" href="#">Delete</a></td>
+    <td>{{ first_name }}</td>
+    <td>{{ last_name }}</td>
+    <td>{{ position }}</td>
+    <td>${{ annual_salary }}</td>
+    <td>${{ sales_this_period }}</td>
+    <td><a class="btn small edit" href="#">Edit</a> <a class="btn small delete" href="#">Delete</a></td>
 </script>
 
 <script type="text/template" id="modal_template">
 <div class="modal hide fade">
-	<div class="modal-header">
-		<a href="#" class="close">&times;</a>
-		{{#add_employee}}
-			<h3>Add Employee</h3>
-		{{/add_employee}}
-		
-		{{#edit_employee}}
-			<h3>Edit {{ model.first_name }} {{ model.last_name }}</h3>
-		{{/edit_employee}}
-	</div>
+    <div class="modal-header">
+        <a href="#" class="close">&times;</a>
+        {{#add_employee}}
+            <h3>Add Employee</h3>
+        {{/add_employee}}
+        
+        {{#edit_employee}}
+            <h3>Edit {{ model.first_name }} {{ model.last_name }}</h3>
+        {{/edit_employee}}
+    </div>
 
-	<div class="modal-body">
-		<form action="">
-			<fieldset>
-				<legend></legend>
-				
-				<div class="clearfix">
-					<label>First Name</label>
-					<div class="input">
-						<input type="text" name="first_name" value="{{ model.first_name }}" />
-					</div>
-				</div>
-				
-				<div class="clearfix">
-					<label>Last Name</label>
-					<div class="input">
-						<input type="text" name="last_name" value="{{ model.last_name }}" />
-					</div>
-				</div>
-				
-				<div class="clearfix">
-					<label>Position</label>
-					<div class="input">
-						<select name="position">
-							<option value="Executive">Executive</option>
-							<option value="Manager">Manager</option>
-							<option value="Sales">Sales</option>
-							<option value="Engineer">Engineer</option>
-						</select>
-					</div>
-				</div>
-				
-				<div class="clearfix">
-					<label>Annual Salary</label>
-					<div class="input">
-						<input type="text" name="annual_salary" value="{{ model.annual_salary }}" />
-					</div>
-				</div>
-				
-				<div class="clearfix">
-					<label>Sales This Period</label>
-					<div class="input">
-						<input type="text" name="sales_this_period" value="{{ model.sales_this_period }}" />
-					</div>
-				</div>
-			</fieldset>
-		</form>
-	</div>
+    <div class="modal-body">
+        <form action="">
+            <fieldset>
+                <legend></legend>
+                
+                <div class="clearfix">
+                    <label>First Name</label>
+                    <div class="input">
+                        <input type="text" name="first_name" value="{{ model.first_name }}" />
+                    </div>
+                </div>
+                
+                <div class="clearfix">
+                    <label>Last Name</label>
+                    <div class="input">
+                        <input type="text" name="last_name" value="{{ model.last_name }}" />
+                    </div>
+                </div>
+                
+                <div class="clearfix">
+                    <label>Position</label>
+                    <div class="input">
+                        <select name="position">
+                            <option value="Executive">Executive</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Engineer">Engineer</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="clearfix">
+                    <label>Annual Salary</label>
+                    <div class="input">
+                        <input type="text" name="annual_salary" value="{{ model.annual_salary }}" />
+                    </div>
+                </div>
+                
+                <div class="clearfix">
+                    <label>Sales This Period</label>
+                    <div class="input">
+                        <input type="text" name="sales_this_period" value="{{ model.sales_this_period }}" />
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 
-	<div class="modal-footer">
-		<a href="#" class="btn primary save">Save</a>
-	</div>
+    <div class="modal-footer">
+        <a href="#" class="btn primary save">Save</a>
+    </div>
 </div>
 </script>
 
 <script type="text/javascript">
-	$(function() {		
-		// load employees into a backbone collection and start history
-		var app = new BackbonePayroll.ManangeEmployeesRouter();
-	    app.employeesCollection.reset(<%= @employees.to_json %>);
-		Backbone.history.start();
-	});
+    $(function() {      
+        // load employees into a backbone collection and start history
+        var app = new BackbonePayroll.ManangeEmployeesRouter();
+        app.employeesCollection.reset(<%= @employees.to_json %>);
+        Backbone.history.start();
+    });
 </script>
 
 </body>
